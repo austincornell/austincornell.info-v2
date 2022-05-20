@@ -2,6 +2,8 @@ import React from "react";
 import Box from "@mui/system/Box";
 import NavBarItem from "./NavBarItem";
 import "../App.css";
+import {ReactComponent as GitHubSVG }from "../images/github.svg";
+import { ReactComponent as LinkedInSVG } from "../images/linkedIn.svg";
 
 function VerticalNav(props) {
     return (
@@ -9,7 +11,7 @@ function VerticalNav(props) {
         sx={{
           backgroundColor: "var(--darkGrey)",
           width: "75px",
-          height: "90vh",
+          height: "98vh",
           margin: "0",
           display: "flex",
           flexDirection: "column",
@@ -21,8 +23,16 @@ function VerticalNav(props) {
           zIndex: 100,
         }}
       >
-        <NavBarItem linkName="Home" dest="/" />
-        <NavBarItem linkName="Home" dest="/" />
+        <Box>
+          <a href="https://github.com/austincornell/austincornell.info-v2">
+            <GitHubSVG className="hvr-grow" />
+          </a>
+        </Box>
+        <Box>
+          <a href="https://www.linkedin.com/in/austincornell/">
+            <LinkedInSVG className="hvr-grow" />
+          </a>
+        </Box>
       </Box>
     );
 }

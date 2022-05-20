@@ -19,7 +19,7 @@ function NavBarItem(props) {
           <Button
             variant="outlined"
             sx={{
-              color: "white",
+              color: "var(--offWhite)",
               borderStyle: "none",
               borderRadius: "0",
               "&:hover": {
