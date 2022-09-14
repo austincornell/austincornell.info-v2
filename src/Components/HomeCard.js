@@ -5,7 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { motion } from "framer-motion";
 
 const darkTheme = createTheme({
   palette: {
@@ -18,7 +17,6 @@ function HomeCard() {
       <ThemeProvider theme={darkTheme}>
         <Card
           sx={{ minWidth: 275 }}
-          component={motion.div}
           whileHover= {{ scale: 1.05,}}
         >
           <CardContent>

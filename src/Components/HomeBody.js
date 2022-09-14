@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 import Box from "@mui/system/Box";
 import { Typography } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import HomeCard from "../Components/HomeCard";
@@ -49,29 +48,21 @@ function HomeBody() {
 }
 
 function HomeBodySection1(){
-  const control = useAnimation();
   const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
+  
 
   return (
     <Box
       sx={{
         height: "50vh",
         color: "white",
-        marginTop: "400px",
+        marginTop: "200px",
       }}
       ref={ref}
       variants={containerVariants}
       initial="hidden"
-      component={motion.div}
-      animate={control}
+    
     >
       <img className="homeRedImage" src={AustinRed} alt="Austin Red" />
       <Typography variant="h5">Oh, hello there. My name is</Typography>
@@ -98,16 +89,10 @@ function HomeBodySection1(){
 }
 
 function HomeBodySection2() {
-  const control = useAnimation();
+
   const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
+
 
   return (
     <Box
@@ -119,8 +104,7 @@ function HomeBodySection2() {
       ref={ref}
       variants={containerVariants}
       initial="hidden"
-      component={motion.div}
-      animate={control}
+      
     >
       <Typography
         variant="h1"

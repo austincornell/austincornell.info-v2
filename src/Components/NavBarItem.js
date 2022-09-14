@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@mui/system/Box";
 import Button from '@mui/material/Button';
 import "../App.css";
-import { motion } from "framer-motion";
 import { ThemeProvider, styled, createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 // borderStyle: "none",
