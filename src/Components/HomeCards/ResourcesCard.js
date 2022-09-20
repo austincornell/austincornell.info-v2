@@ -20,7 +20,7 @@ const darkTheme = createTheme({
 function ResourcesCard(props) {
     return (
       <Card
-        sx={{ maxWidth: 600, borderRadius: "15px" }}
+        sx={{ maxWidth: 1200, borderRadius: "15px" }}
         variant="outlined"
         data-aos="fade-up"
         data-aos-delay="{{200}}"

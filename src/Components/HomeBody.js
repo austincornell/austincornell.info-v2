@@ -12,6 +12,7 @@ import EducationCard from "./HomeCards/EducationCard";
 import PhilCard from "./HomeCards/PhilCard";
 import ResumeCard from "./HomeCards/ResumeCard";
 import FunCard from "./HomeCards/FunCard";
+import ResourcesCard from "./HomeCards/ResourcesCard";
 
 function HomeBody() {
 
@@ -97,7 +98,9 @@ function HomeBodySection2(){
       <Grid item sm={12} md={6}>
         <FunCard />
       </Grid>
-      <Grid item sm={12}></Grid>
+      <Grid item sm={12}>
+        <ResourcesCard/>
+      </Grid>
     </Grid>
   );
 }
