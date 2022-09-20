@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from "@mui/material/CardMedia";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const darkTheme = createTheme({
@@ -13,31 +14,34 @@ const darkTheme = createTheme({
   },
 });
 
-function HomeCard() {
+function HomeCard(props) {
     return (
-      
-    <Card sx={{ maxWidth: 700 }}
-    variant="outlined">
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image=""
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+      <Card
+        sx={{ maxWidth: 700 }}
+        variant="outlined"
+        data-aos="fade-up"
+        data-aos-delay="{{200}}"
+      >
+        <CardMedia
+          component="img"
+          alt="green iguana"
+          height="140"
+          image={props.imagePref}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="div">
+            {props.titleText}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {props.detailText}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" disableElevation size="small">
+            {props.buttonText}
+          </Button>
+        </CardActions>
+      </Card>
     );
 
 }
