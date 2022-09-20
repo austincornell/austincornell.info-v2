@@ -44,7 +44,7 @@ function FunCard(props) {
           </Typography>
           <div className="redLine" />
           <Typography variant="body1">
-            My philosophy is this: <br />{" "}
+            My philosophy is: <br />{" "}
             <i>
               I aim to have the highest caliber of dedication and adaptability
               while fostering, rather than sacrificing, the strongest sense of
