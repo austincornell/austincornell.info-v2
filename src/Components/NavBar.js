@@ -1,5 +1,4 @@
 import React from "react";
-import '../App.css';
 import Box from '@mui/system/Box';
 import NavBarItem from "./NavBarItem";
 

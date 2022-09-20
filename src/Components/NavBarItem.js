@@ -1,7 +1,6 @@
 import React from "react";
 import Box from "@mui/system/Box";
 import Button from '@mui/material/Button';
-import "../App.css";
 import { Link } from "react-router-dom";
 
 

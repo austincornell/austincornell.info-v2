@@ -1,11 +1,15 @@
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import './css/hover.css';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Education from './Pages/Education';
 import WorkHistory from './Pages/WorkHistory';
 import { BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom";
 import React, { Component } from "react";
+//https://michalsnik.github.io/aos/
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -28,6 +32,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+AOS.init();
 
 
 function App() {

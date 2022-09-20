@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from "@mui/material/CardMedia";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import HomeButton from "../Components/HomeButton";
+
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -17,7 +19,7 @@ const darkTheme = createTheme({
 function HomeCard(props) {
     return (
       <Card
-        sx={{ maxWidth: 700 }}
+        sx={{ maxWidth: 400, borderRadius: "15px" }}
         variant="outlined"
         data-aos="fade-up"
         data-aos-delay="{{200}}"
@@ -29,17 +31,23 @@ function HomeCard(props) {
           image={props.imagePref}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
+          <Typography
+            gutterBottom
+            variant="h4"
+            component="div"
+            sx={{
+              fontWeight: 500,
+            }}
+          >
             {props.titleText}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body1" color="text.secondary">
             {props.detailText}
           </Typography>
         </CardContent>
+        <hr className="cardLine" />
         <CardActions>
-          <Button variant="contained" disableElevation size="small">
-            {props.buttonText}
-          </Button>
+          <HomeButton text="See my education" />
         </CardActions>
       </Card>
     );

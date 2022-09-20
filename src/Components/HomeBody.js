@@ -1,38 +1,17 @@
 import React from "react";
-import "../App.css";
 import Box from "@mui/system/Box";
 import { Typography } from "@mui/material";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import HomeCard from "../Components/HomeCard";
 import Grid from "@mui/material/Grid";
 import AustinRed from "../images/austinCornell-1.jpg";
-
-
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0,
-      duration: 1,
-      type: "easeInOut",
-    },
-    
-  },
-  exit: {
-    y: "-100vh",
-    transition: {
-      ease: "easeInOut",
-    },
-  },
-};
-
-
+import {homeContent} from "../data/homePageContent";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import HomeButton from "./HomeButton";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import AboutCard from "./HomeCards/AboutCard";
+import EducationCard from "./HomeCards/EducationCard";
+import PhilCard from "./HomeCards/PhilCard";
+import ResumeCard from "./HomeCards/ResumeCard";
+import FunCard from "./HomeCards/FunCard";
 
 function HomeBody() {
 
@@ -48,69 +27,77 @@ function HomeBody() {
 }
 
 function HomeBodySection1(){
-  const [ref, inView] = useInView();
-
-  
 
   return (
-    <Box
+    <Grid
+      container
+      spacing={2}
       sx={{
-        height: "50vh",
-        marginTop: "200px",
+        marginTop: "25vh",
+        marginBottom: "50vh",
       }}
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
     >
-      <Grid container spacing={2}>
-        <Grid item md={12} lg={4}>
-          <img className="homeRedImage" src={AustinRed} alt="Austin Red" />
-        </Grid>
-        <Grid item md={12} lg={8}>
-          <Typography variant="h5">Oh, hello there. My name is</Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: "bold",
-              color: "var(--mainRed)",
-            }}
-          >
-            Austin Cornell
-          </Typography>
-          <Typography variant="body1">
-            <a class="hvr-sweep-to-top" href="">
-              I'm super glad
-            </a>{" "}
-            you decided to visit. This website was coded by me (with help from
-            various frameworks) as a side-project. I truly hope you can get some
-            information out of it. The goal is to provide anyone with more
-            detailed information about myself while also demonstrating some
-            skills. To start, you can see a quick-bytes section below that
-            should get you my most basic details. If you want more, click
-            around! Don't forget you can email me by clicking button in the top
-            right corner. Happy clicking!
-          </Typography>
-        </Grid>
+      <Grid item md={12} lg={4}>
+        <img
+          className="homeImage"
+          src={AustinRed}
+          alt="Austin Cornell Portrait"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        />
       </Grid>
-    </Box>
+      <Grid item md={12} lg={8} data-aos="fade-up" data-aos-delay="200">
+        <Typography variant="h5">Oh, hello there. My name is</Typography>
+        <Typography
+          variant="h1"
+          sx={{
+            fontWeight: "bold",
+            color: "var(--mainRed)",
+          }}
+        >
+          Austin Cornell
+        </Typography>
+        <Typography variant="body1">
+          <a className="hvr-sweep-to-top" href="">
+            I'm so glad
+          </a>{" "}
+          you decided to visit. This website was coded by me (with help from
+          various frameworks) as a side-project. I truly hope you can get some
+          information out of it. The goal is to provide anyone with more
+          detailed information about myself while also demonstrating some
+          skills. To start, you can see a quick-bytes section below that should
+          get you my most basic details. If you want more, click around! Don't
+          forget you can email me by clicking button in the top right corner.
+          Happy clicking!
+        </Typography>
+        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
+        <HomeButton text="GitHub" icon={<DescriptionOutlinedIcon />} />
+        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
+        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
+      </Grid>
+    </Grid>
   );
 }
 
 function HomeBodySection2(){
   return (
-    <Grid container spacing={3}>
-      <Grid item sm={12} md={6}>
-        <HomeCard className=""></HomeCard>
+    <Grid container spacing={3} sx={{ marginBottom: "20vh" }}>
+      <Grid item sm={12} md={4}>
+        <AboutCard />
+      </Grid>
+      <Grid item sm={12} md={4}>
+        <EducationCard />
+      </Grid>
+      <Grid item sm={12} md={4}>
+        <PhilCard />
       </Grid>
       <Grid item sm={12} md={6}>
-        <HomeCard className=""></HomeCard>
+        <ResumeCard />
       </Grid>
       <Grid item sm={12} md={6}>
-        <HomeCard className=""></HomeCard>
+        <FunCard />
       </Grid>
-      <Grid item sm={12} md={6}>
-        <HomeCard className=""></HomeCard>
-      </Grid>
+      <Grid item sm={12}></Grid>
     </Grid>
   );
 }
