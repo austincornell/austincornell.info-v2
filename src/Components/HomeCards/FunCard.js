@@ -5,9 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from "@mui/material/CardMedia";
 import Typography from '@mui/material/Typography';
 import HomeButton from "../HomeButton";
-import PhilPic from "../../images/philosophy.png"
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
-
+import KnifePic from "../../images/knife.png"
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const darkTheme = createTheme({
@@ -17,18 +17,24 @@ const darkTheme = createTheme({
 });
 
 function FunCard(props) {
+    const matches = useMediaQuery("(min-width:600px)");
+    if (matches) {
+      var maxWidthScreen = 1200;
+    } else {
+      var maxWidthScreen = 600;
+    }
     return (
       <Card
-        sx={{ maxWidth: 600, borderRadius: "15px" }}
+        sx={{ maxWidth: maxWidthScreen, borderRadius: "15px" }}
         variant="outlined"
         data-aos="fade-up"
         data-aos-delay="{{200}}"
       >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="Custom Knife Photo"
           height="140"
-          image={PhilPic}
+          image={KnifePic}
         />
 
         <CardContent sx={{ minHeight: 220 }}>
@@ -44,20 +50,25 @@ function FunCard(props) {
           </Typography>
           <div className="redLine" />
           <Typography variant="body1">
-            My philosophy is: <br />{" "}
-            <i>
-              I aim to have the highest caliber of dedication and adaptability
-              while fostering, rather than sacrificing, the strongest sense of
-              communication and humanity with those around me.
-            </i>
+            Work/Life balance is something that is invaluable in today's world.
+            For me, I enjoy cooking, running, playing games (real or video), and
+            spending time with the people I care about. At the time of writing
+            this, I am deeply interested in
+            <a
+              className="hvr-sweep-to-top"
+              href="https://www.chefknivestogo.com/"
+            >
+              chef's knives
+            </a>
+            (types and sharpening)!
           </Typography>
         </CardContent>
         <hr className="cardLine" />
         <CardActions>
           <HomeButton
-            text="Understand My Philosophy"
-            icon={<LightbulbOutlinedIcon />}
-            destination="/about#philosophy"
+            text="More About Me"
+            icon={<InfoOutlinedIcon />}
+            destination="/about"
           />
         </CardActions>
       </Card>

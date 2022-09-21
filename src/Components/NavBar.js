@@ -7,7 +7,6 @@ function NavBar() {
     return (
       <Box
         sx={{
-          backgroundColor: "var(--darkGrey)",
           width: "100wh",
           height: "70px",
           margin: "0",
@@ -16,7 +15,7 @@ function NavBar() {
           gap: "1rem",
           alignItems: "center",
           paddingRight: "1rem",
-          position: "sticky",
+          
           top: 0,
           zIndex: 100,
         }}

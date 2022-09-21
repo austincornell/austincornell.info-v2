@@ -3,11 +3,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from "@mui/material/CardMedia";
-import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import HomeButton from "../HomeButton";
-import PhilPic from "../../images/philosophy.png";
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
+import ResourcePic from "../../images/resourcesImage.jpg";
+import SourceOutlinedIcon from "@mui/icons-material/SourceOutlined";
+import MouseOutlinedIcon from "@mui/icons-material/MouseOutlined";
+import PanToolAltOutlinedIcon from "@mui/icons-material/PanToolAltOutlined";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -27,9 +29,9 @@ function ResourcesCard(props) {
       >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="Resources Image"
           height="140"
-          image={PhilPic}
+          image={ResourcePic}
         />
 
         <CardContent sx={{ minHeight: 220 }}>
@@ -41,25 +43,45 @@ function ResourcesCard(props) {
               fontWeight: 500,
             }}
           >
-            My Resume
+            Quick Resources
           </Typography>
           <div className="redLine" />
           <Typography variant="body1">
-            My philosophy is this: <br />{" "}
-            <i>
-              I aim to have the highest caliber of dedication and adaptability
-              while fostering, rather than sacrificing, the strongest sense of
-              communication and humanity with those around me.
-            </i>
+            This site was a blast to make and really helped refine some skills
+            in JavaScript, React, and cloud deployment via Google's
+            <a className="hvr-sweep-to-top" href="https://firebase.google.com">
+              Firebase.
+            </a>
+            However, below are some other frameworks and resources that I used
+            to help build some of the interactions and components found on the
+            site. They were a huge time saver so feel free to check them out!
           </Typography>
         </CardContent>
         <hr className="cardLine" />
         <CardActions>
-          <HomeButton
-            text="Understand My Philosophy"
-            icon={<LightbulbOutlinedIcon />}
-            destination="/about#philosophy"
-          />
+          <Stack
+            direction="row"
+            
+            sx={{
+              flexWrap: "wrap"
+            }}
+          >
+            <HomeButton
+              text="Material UI"
+              icon={<SourceOutlinedIcon />}
+              destination="https://mui.com/"
+            />
+            <HomeButton
+              text="Animate On Scroll"
+              icon={<MouseOutlinedIcon />}
+              destination="https://michalsnik.github.io/aos/"
+            />
+            <HomeButton
+              text="Hover.css"
+              icon={<PanToolAltOutlinedIcon />}
+              destination="https://ianlunn.github.io/Hover/"
+            />
+          </Stack>
         </CardActions>
       </Card>
     );

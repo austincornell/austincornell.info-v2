@@ -6,9 +6,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import HomeButton from "../HomeButton";
-import PhilPic from "../../images/philosophy.png";
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
-
+import ResumePic from "../../images/resumeImage.jpg";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const darkTheme = createTheme({
@@ -18,18 +18,24 @@ const darkTheme = createTheme({
 });
 
 function ResumeCard(props) {
+    const matches = useMediaQuery("(min-width:600px)");
+    if (matches) {
+      var maxWidthScreen = 1200;
+    } else {
+      var maxWidthScreen = 600;
+    }
     return (
       <Card
-        sx={{ maxWidth: 600, borderRadius: "15px" }}
+        sx={{ maxWidth: maxWidthScreen, borderRadius: "15px" }}
         variant="outlined"
         data-aos="fade-up"
         data-aos-delay="{{200}}"
       >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="Resume Picture"
           height="140"
-          image={PhilPic}
+          image={ResumePic}
         />
 
         <CardContent sx={{ minHeight: 220 }}>
@@ -45,20 +51,25 @@ function ResumeCard(props) {
           </Typography>
           <div className="redLine" />
           <Typography variant="body1">
-            My philosophy is this: <br />{" "}
-            <i>
-              I aim to have the highest caliber of dedication and adaptability
-              while fostering, rather than sacrificing, the strongest sense of
-              communication and humanity with those around me.
-            </i>
+            Although I believe people are made of more than what's on a resume,
+            I understand that a quick overview of my history is helpful. As
+            such, you can download my resume below or consider connecting with
+            me on{" "}
+            <a
+              className="hvr-sweep-to-top"
+              href="https://www.linkedin.com/in/austincornell/"
+            >
+              LinkedIn
+            </a>
+            to see my education and work progressions.
           </Typography>
         </CardContent>
         <hr className="cardLine" />
         <CardActions>
           <HomeButton
-            text="Understand My Philosophy"
-            icon={<LightbulbOutlinedIcon />}
-            destination="/about#philosophy"
+            text="Download My Resume"
+            icon={<FileDownloadOutlinedIcon />}
+            destination="../../images/CornellAustin_Resume_Redacted.pdf"
           />
         </CardActions>
       </Card>

@@ -13,6 +13,13 @@ import PhilCard from "./HomeCards/PhilCard";
 import ResumeCard from "./HomeCards/ResumeCard";
 import FunCard from "./HomeCards/FunCard";
 import ResourcesCard from "./HomeCards/ResourcesCard";
+import MobileHomeBody from "./Mobile/MobileHomeBody";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
+
 
 function HomeBody() {
 
@@ -28,17 +35,24 @@ function HomeBody() {
 }
 
 function HomeBodySection1(){
+const matches = useMediaQuery("(min-width:900px)");
 
-  return (
-    <Grid
-      container
-      spacing={2}
-      sx={{
-        marginTop: "25vh",
-        marginBottom: "50vh",
-      }}
-    >
-      <Grid item md={12} lg={4}>
+if(matches){
+  var photoTopMargin = "25vh"
+} else{
+  var photoTopMargin = "0vh";
+}
+return (
+  <Grid
+    container
+    spacing={2}
+    sx={{
+      marginTop: photoTopMargin,
+      marginBottom: "50vh",
+    }}
+  >
+    <Grid item md={5} lg={4}>
+      {matches && (
         <img
           className="homeImage"
           src={AustinRed}
@@ -46,11 +60,34 @@ function HomeBodySection1(){
           data-aos="fade-right"
           data-aos-delay="200"
         />
-      </Grid>
-      <Grid item md={12} lg={8} data-aos="fade-up" data-aos-delay="200">
-        <Typography variant="h5">Oh, hello there. My name is</Typography>
+      )}
+      {!matches && (
+        <img
+          className="homeImageMobile"
+          src={AustinRed}
+          alt="Austin Cornell Portrait"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        />
+      )}
+    </Grid>
+    {!matches && <div className="spacerDiv"></div>}
+    <Grid
+      item
+      md={7}
+      lg={8}
+      data-aos="fade-up"
+      data-aos-delay="200"
+      sx={{
+        backgroundColor: "white",
+        minHeight: "60vh",
+      }}
+    >
+      <Typography variant="h5">Oh, hello there. My name is</Typography>
+
+      {matches && (
         <Typography
-          variant="h1"
+          variant="h2"
           sx={{
             fontWeight: "bold",
             color: "var(--mainRed)",
@@ -58,26 +95,57 @@ function HomeBodySection1(){
         >
           Austin Cornell
         </Typography>
-        <Typography variant="body1">
-          <a className="hvr-sweep-to-top" href="">
-            I'm so glad
-          </a>{" "}
-          you decided to visit. This website was coded by me (with help from
-          various frameworks) as a side-project. I truly hope you can get some
-          information out of it. The goal is to provide anyone with more
-          detailed information about myself while also demonstrating some
-          skills. To start, you can see a quick-bytes section below that should
-          get you my most basic details. If you want more, click around! Don't
-          forget you can email me by clicking button in the top right corner.
-          Happy clicking!
+      )}
+
+      {!matches && (
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: "bold",
+            color: "var(--mainRed)",
+          }}
+        >
+          Austin Cornell
         </Typography>
-        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
-        <HomeButton text="GitHub" icon={<DescriptionOutlinedIcon />} />
-        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
-        <HomeButton text="View Resume" icon={<DescriptionOutlinedIcon />} />
-      </Grid>
+      )}
+      <Typography variant="body1" sx={{ marginBottom: "10px" }}>
+        <a className="hvr-sweep-to-top" href="">
+          I'm so glad
+        </a>{" "}
+        you decided to visit. This website was coded by me (with help from
+        various frameworks) as a side-project. I truly hope you can get some
+        information out of it. The goal is to provide anyone with more detailed
+        information about myself while also demonstrating some skills. To start,
+        you can see a quick-bytes section below that should get you my most
+        basic details. If you want more, click around! Don't forget you can
+        email me by clicking button in the top right corner. Happy clicking!
+      </Typography>
+      <HomeButton
+        text="View Resume"
+        icon={<FileDownloadOutlinedIcon />}
+        destination="../images/CornellAustin_Resume_Redacted.pdf"
+        isFile={true}
+      />
+      <HomeButton
+        text="GitHub"
+        icon={<CodeOutlinedIcon />}
+        destination="https://github.com/austincornell/austincornell.info-v2"
+      />
+      <HomeButton
+        text="LinkedIn"
+        icon={<PeopleAltOutlinedIcon />}
+        destination="https://www.linkedin.com/in/austincornell/"
+      />
+      <HomeButton
+        text="Indiana University"
+        icon={<AccountBalanceOutlinedIcon />}
+        destination="https://iu.edu"
+      />
     </Grid>
-  );
+  </Grid>
+);
+
+  
 }
 
 function HomeBodySection2(){

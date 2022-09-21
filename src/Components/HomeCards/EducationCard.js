@@ -6,8 +6,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from '@mui/material/Typography';
 import HomeButton from "../HomeButton";
 import IndianaPic from "../../images/indiana.jpg"
-import SchoolIcon from "@mui/icons-material/School";
-
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const darkTheme = createTheme({
@@ -17,16 +17,22 @@ const darkTheme = createTheme({
 });
 
 function EducationCard(props) {
+    const matches = useMediaQuery("(min-width:600px)");
+    if (matches) {
+      var maxWidthScreen = 1200;
+    } else {
+      var maxWidthScreen = 600;
+    }
     return (
       <Card
-        sx={{ maxWidth: 400, borderRadius: "15px" }}
+        sx={{ maxWidth: maxWidthScreen, borderRadius: "15px" }}
         variant="outlined"
         data-aos="fade-up"
         data-aos-delay="{{200}}"
       >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="Indiana University Campus"
           height="140"
           image={IndianaPic}
         />
@@ -67,7 +73,7 @@ function EducationCard(props) {
         <CardActions>
           <HomeButton
             text="See My Education"
-            icon={<SchoolIcon />}
+            icon={<SchoolOutlinedIcon />}
             destination="/education"
           />
         </CardActions>

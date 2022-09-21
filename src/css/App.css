@@ -37,10 +37,14 @@ a svg:hover{
 }
 
 .homeImage {
-
   width: 300px;
   border-radius: 200px;
-
+}
+.homeImageMobile {
+  max-width: 93vw;
+  border-radius: 15px;
+  position: absolute;
+  z-index: -1;
 }
 
 .cardLine {
@@ -60,7 +64,9 @@ a svg:hover{
   margin-bottom: 10px;
 }
 
-
+.spacerDiv{
+  margin-top: 40vh;
+}
 
 
 .homeResumeButton{
