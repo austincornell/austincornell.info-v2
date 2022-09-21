@@ -1,85 +1,58 @@
 import React from "react";
 import {
-  VerticalTimeline,
-  VerticalTimelineElement,
+  VerticalTimeline
 } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { Typography } from "@mui/material";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Chip from "@mui/material/Chip";
 
+import ThisWebsite from "./TimelineCards/ThisWebsite";
+import StanleySecurity from "./TimelineCards/StanleySecurity";
+import IndianaUniversity from "./TimelineCards/IndianaUniversity"
+import Cromosoma from "./TimelineCards/Cromosoma";
+import Careband from "./TimelineCards/Careband";
+import Apple from "./TimelineCards/Apple";
+import BestBuy from "./TimelineCards/BestBuy";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function WorkHistoryTimeline() {
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleChange = (panel) => (event, isExpanded) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+    
      return (
-       <VerticalTimeline layout="1-column-left" lineColor="black">
-         <VerticalTimelineElement
-           className="vertical-timeline-element--work"
-           contentStyle={{
-             background: "white",
-             color: "black",
-             borderTop: "4px solid black",
-             borderRight: "1px solid lightGrey",
-             borderLeft: "1px solid lightGrey",
-             borderBottom: "1px solid lightGrey",
-             borderRadius: "15px",
-             boxShadow: "none",
-           }}
-           contentArrowStyle={{ borderRight: "7px solid  red" }}
-           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-           icon={<InfoOutlinedIcon />}
-         >
-           <Accordion
-             sx={{
-               boxShadow: "none",
-               "&:before": {
-                 backgroundColor: "white",
-               },
-             }}
-           >
-             <AccordionSummary
-               expandIcon={<ExpandMoreIcon />}
-               aria-controls="panel1a-content"
-               id="panel1a-header"
+       <Grid container>
+         <Grid item lg={3}>
+          
+             <Typography
+               variant="h3"
+               sx={{
+                 fontWeight: "bold",
+                 color: "var(--mainRed)",
+               }}
              >
-               <Typography
-                 variant="h5"
-                 sx={{
-                   fontWeight: "bold",
-                   color: "var(--mainRed)",
-                 }}
-               >
-                 Accordion 1
-               </Typography>
-               {/* <br/>
-               <Typography
-                 variant="body1"
-               >
-                 Accordion 1
-               </Typography> */}
-             </AccordionSummary>
-             <AccordionDetails>
-               <Chip icon={<InfoOutlinedIcon />} label="With Icon" />
-               <Chip icon={<InfoOutlinedIcon />} label="With Icon" />
-               <Chip icon={<InfoOutlinedIcon />} label="With Icon" />
-               <Chip icon={<InfoOutlinedIcon />} label="With Icon" />
-               <Typography>
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                 eget.
-               </Typography>
-             </AccordionDetails>
-           </Accordion>
-         </VerticalTimelineElement>
-       </VerticalTimeline>
+               Austin Cornell
+             </Typography>
+          
+           <Typography variant="body1">
+             
+             you decided to visit. This website was coded by me (with help from
+             various frameworks) as a side-project. I truly hope you can get
+             some information out of it. The goal is to provide anyone with more
+             detailed information about myself while also demonstrating some
+             skills. To start, you can see a quick-bytes section below that
+             should get you my most basic details. If you want more, click
+             around! Don't forget you can email me by clicking button in the top
+             right corner. Happy clicking!
+           </Typography>
+         </Grid>
+         <Grid item lg={9}>
+           <VerticalTimeline layout="1-column-left" lineColor="black">
+             <ThisWebsite />
+             <IndianaUniversity />
+             <StanleySecurity />
+             <Cromosoma />
+             <Careband />
+             <Apple />
+             <BestBuy />
+           </VerticalTimeline>
+         </Grid>
+       </Grid>
      );
 }
 

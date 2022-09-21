@@ -17,7 +17,7 @@ function MobileNavBarItem(props) {
               borderStyle: "none",
               borderRadius: "0",
               width: "100%",
-              margin: "7px 0px 7px 0px",
+              margin: "5px 0px 5px 0px",
               "&:hover": {
                 borderStyle: "none",
                 backgroundColor: "var(--darkGrey)",

@@ -69,7 +69,8 @@ function ResumeCard(props) {
           <HomeButton
             text="Download My Resume"
             icon={<FileDownloadOutlinedIcon />}
-            destination="../../images/CornellAustin_Resume_Redacted.pdf"
+            destination="/files/CornellAustin_Resume_Redacted.pdf"
+            isFile={true}
           />
         </CardActions>
       </Card>

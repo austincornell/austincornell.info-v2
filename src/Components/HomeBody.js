@@ -13,7 +13,6 @@ import PhilCard from "./HomeCards/PhilCard";
 import ResumeCard from "./HomeCards/ResumeCard";
 import FunCard from "./HomeCards/FunCard";
 import ResourcesCard from "./HomeCards/ResourcesCard";
-import MobileHomeBody from "./Mobile/MobileHomeBody";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
@@ -48,10 +47,10 @@ return (
     spacing={2}
     sx={{
       marginTop: photoTopMargin,
-      marginBottom: "50vh",
+      marginBottom: "10vh",
     }}
   >
-    <Grid item md={5} lg={4}>
+    <Grid item sm={12} md={5} lg={4}>
       {matches && (
         <img
           className="homeImage"
@@ -74,6 +73,7 @@ return (
     {!matches && <div className="spacerDiv"></div>}
     <Grid
       item
+      sm={12}
       md={7}
       lg={8}
       data-aos="fade-up"
@@ -87,7 +87,7 @@ return (
 
       {matches && (
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             fontWeight: "bold",
             color: "var(--mainRed)",
@@ -99,7 +99,7 @@ return (
 
       {!matches && (
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{
             fontWeight: "bold",
             color: "var(--mainRed)",
@@ -123,7 +123,7 @@ return (
       <HomeButton
         text="View Resume"
         icon={<FileDownloadOutlinedIcon />}
-        destination="../images/CornellAustin_Resume_Redacted.pdf"
+        destination="/files/CornellAustin_Resume_Redacted.pdf"
         isFile={true}
       />
       <HomeButton

@@ -11,27 +11,21 @@ function HomeButton(props){
         disableElevation
         size="small"
         sx={{
-          backgroundColor: "black",
+          backgroundColor: "white",
+          color: "black",
           border: "1px solid black",
           borderRadius: "100px",
           margin: "10px 5px 10px 5px",
           fontWeight: 600,
+          maxWidth: "150px",
           "&:hover": {
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: "black",
+            color: "white",
           },
         }}
         onClick={() => {
-         
-          if (props.isFile) {
-            var link = document.createElement("a");
-            link.href = props.destination;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }else{
-            window.location.assign(props.destination);
-          }
+          
+          
         }}
       >
         {props.text}

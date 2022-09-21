@@ -6,10 +6,19 @@ import Box from "@mui/system/Box";
 import Grid from "@mui/material/Grid";
 import HomeBody from "../Components/HomeBody";
 import WorkHistoryTimeline from "../Components/WorkHistoryTimeline";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileNav from "../Components/Mobile/MobileNav";
+
+
 
 function WorkHistory() {
-  return (
-    <Grid container spacing={3}>
+  
+
+
+  const matches = useMediaQuery("(min-width:900px)");
+  if (matches) {
+    return (
+      <Grid container spacing={3}>
       <Grid item xs={1}>
         <VerticalNav />
       </Grid>
@@ -20,7 +29,19 @@ function WorkHistory() {
         </Container>
       </Grid>
     </Grid>
-  );
+    );
+  } else {
+    return (
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <MobileNav />
+          <Container>
+            <WorkHistoryTimeline />
+          </Container>
+        </Grid>
+      </Grid>
+    );
+  }
 }
 
 export default WorkHistory;
