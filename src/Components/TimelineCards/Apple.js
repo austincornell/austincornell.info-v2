@@ -20,9 +20,6 @@ import HomeButton from "../HomeButton";
 export default function Apple() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"

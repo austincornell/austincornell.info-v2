@@ -68,6 +68,10 @@ a svg:hover{
   margin-top: 40vh;
 }
 
+.active{
+  background-color: red;
+}
+
 
 .homeResumeButton{
   background-color: black;

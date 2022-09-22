@@ -26,7 +26,7 @@ function WorkHistoryTimeline() {
                  color: "var(--mainRed)",
                }}
              >
-               Austin Cornell
+               Work History
              </Typography>
           
            <Typography variant="body1">
