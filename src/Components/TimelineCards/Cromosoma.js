@@ -15,7 +15,8 @@ import CodeIcon from "@mui/icons-material/Code";
 import ColoredChip from "../ColoredChip";
 import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
 import HomeButton from "../HomeButton";
-
+import BlackOutlineChip from "./BlackOutlineChip";
+import DataArrayOutlinedIcon from "@mui/icons-material/DataArrayOutlined";
 
 export default function Cromosoma() {
   const [expanded, setExpanded] = React.useState(false);
@@ -27,14 +28,10 @@ export default function Cromosoma() {
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: "white",
-        color: "black",
-        borderTop: "1px solid lightgrey",
-        borderRight: "1px solid lightGrey",
-        borderLeft: "1px solid lightGrey",
-        borderBottom: "1px solid lightGrey",
+        border: "1px solid lightGray",
         borderRadius: "15px",
         boxShadow: "none",
+        paddingBottom: "0px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
@@ -62,35 +59,48 @@ export default function Cromosoma() {
             alignItems="left"
             spacing={0}
           >
+            <Typography variant="caption">Indiana University</Typography>
             <Typography
               variant="h4"
               sx={{
                 fontWeight: "bold",
               }}
             >
-              Indiana University | Cromosoma Project
+              Cromosoma Capstone Project
             </Typography>
             <Typography variant="overline">
               Spring 2019 - Summer 2022
             </Typography>
             <div className="redLine"></div>
+            <Stack
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              spacing={1}
+              sx={{ flexWrap: "wrap" }}
+            >
+              <BlackOutlineChip
+                icon={<CodeIcon />}
+                title="Full Stack Development"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<DataArrayOutlinedIcon />}
+                title="Data Design"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<DesignServicesOutlinedIcon />}
+                title="Design Skills"
+                color="black"
+                background="#ffcaca"
+              />
+            </Stack>
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            <ColoredChip
-              icon={<CodeIcon />}
-              title="Web Development"
-              color="black"
-              background="#ffcaca"
-            />
-          </Stack>
           <Typography variant="body1">
             During my senior academic year, I had the fantastic opportunity to
             complete a Capstone Project that fulfilled the final requirement for

@@ -16,16 +16,13 @@ import ColoredChip from "../ColoredChip";
 import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
 import HomeButton from "../HomeButton";
 import BlackOutlineChip from "./BlackOutlineChip";
-import WatchOutlinedIcon from "@mui/icons-material/WatchOutlined";
-import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
-import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerrorredOutlined";
+import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
 
-export default function Careband() {
+export default function Deloitte() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
@@ -34,6 +31,7 @@ export default function Careband() {
         borderRadius: "15px",
         boxShadow: "none",
         paddingBottom: "0px",
+        
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
@@ -47,7 +45,9 @@ export default function Careband() {
           boxShadow: "none",
           "&:before": {
             backgroundColor: "white",
+            
           },
+          
         }}
       >
         <AccordionSummary
@@ -61,20 +61,16 @@ export default function Careband() {
             alignItems="left"
             spacing={0}
           >
-            <Typography variant="caption">
-              Indiana University
-            </Typography>
+            <Typography variant="caption">Deloitte</Typography>
             <Typography
               variant="h4"
               sx={{
                 fontWeight: "bold",
               }}
             >
-              Careband Research Study
+              Solutions Engineer Analyst
             </Typography>
-            <Typography variant="overline">
-              Fall 2019 - Spring 2020
-            </Typography>
+            <Typography variant="overline">Fall 2022 - Current</Typography>
             <div className="redLine"></div>
             <Stack
               direction="row"
@@ -84,49 +80,18 @@ export default function Careband() {
               sx={{ flexWrap: "wrap" }}
             >
               <BlackOutlineChip
-                icon={<WatchOutlinedIcon />}
-                title="Medical Devices"
+                icon={<ReportGmailerrorredOutlinedIcon />}
+                title="History Being Written"
                 color="black"
                 background="#ffcaca"
               />
-              <BlackOutlineChip
-                icon={<ForumOutlinedIcon />}
-                title="User Interviews"
-                color="black"
-                background="#ffcaca"
-              />
-              <BlackOutlineChip
-                icon={<ScienceOutlinedIcon />}
-                title="Documented Research"
-                color="black"
-                background="#ffcaca"
-              />
+              
             </Stack>
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1">
-            A recent project, that was unfortunately affected by COVID, was an
-            opportunity I had to work with an Indiana University Alumni doing
-            research for his company <b>Careband</b>. Adam Sobol (CEO) worked
-            with IU to investigate his products (wearable devices for those with
-            mental illnesses) as they were applied in rural homes rather than
-            assisted-living centers, where they currently are deployed.
-          </Typography>
-          <br />
-          <Typography variant="body1">
-            My experience here was gained as I interacted with participants,
-            delved into the process of research (using the IRB and
-            writing/recording documents), and communicated across team members
-            to find more individuals to recruit into the project and obtain
-            insights.
-          </Typography>
-          <br />
-          <Typography variant="body1">
-            Unfortunately, COVID essentially shut this project now as we no
-            longer could interact with participants, enter their homes to
-            install hardware, or conduct other IU-related tasks. I was moved
-            off-campus and since retired from the project to pursue other items.
+            Woah! A little early... History is still being written...
           </Typography>
         </AccordionDetails>
       </Accordion>

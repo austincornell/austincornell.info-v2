@@ -12,14 +12,15 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Stack from "@mui/material/Stack";
 import Chip from '@mui/material/Chip';
 import CodeIcon from "@mui/icons-material/Code";
-import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+import ZoomInMapOutlinedIcon from "@mui/icons-material/ZoomInMapOutlined";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import DeviceHubOutlinedIcon from "@mui/icons-material/DeviceHubOutlined";
-import LuddyPic from "../../images/iu-luddy-hall.jpg";
+import KelleyPic from "../../images/iu-kelley-school.jpg";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
 import DataArrayOutlinedIcon from "@mui/icons-material/DataArrayOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
 
 import {
   createTheme,
@@ -31,7 +32,7 @@ let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 
-export default function InformaticsCard() {
+export default function MSISCard() {
   const [activeTab, setActiveTab] = useState("tab1");
 
     const handleTab1 = () => {
@@ -62,9 +63,9 @@ export default function InformaticsCard() {
     >
       <CardMedia
         component="img"
-        alt="Luddy School"
+        alt="Kelley School"
         height="140"
-        image={LuddyPic}
+        image={KelleyPic}
       />
       <CardContent sx={{ minHeight: 340 }}>
         <ThemeProvider theme={theme}>
@@ -76,18 +77,17 @@ export default function InformaticsCard() {
               fontWeight: 500,
             }}
           >
-            B.S. Informatics - May 2021
+            M.S. Information Systems - May 2022
           </Typography>
           <Box>{activeTab === "tab1" ? <Tab1 /> : ""}</Box>
           <Box>{activeTab === "tab2" ? <Tab2 /> : ""}</Box>
-          <Box>{activeTab === "tab3" ? <Tab3 /> : ""}</Box>
         </ThemeProvider>
       </CardContent>
       <hr className="cardLine" />
       <CardActions>
         <Stack direction="row" flexWrap="wrap">
           <Button
-            startIcon={<DeviceHubOutlinedIcon />}
+            startIcon={<ZoomInMapOutlinedIcon />}
             variant="contained"
             disableElevation
             size="small"
@@ -119,10 +119,10 @@ export default function InformaticsCard() {
             }
             onClick={handleTab1}
           >
-            Informatics
+            MSIS Core
           </Button>
           <Button
-            startIcon={<DataObjectIcon />}
+            startIcon={<VpnKeyOutlinedIcon />}
             variant="contained"
             disableElevation
             size="small"
@@ -154,42 +154,7 @@ export default function InformaticsCard() {
             }
             onClick={handleTab2}
           >
-            Computer Science
-          </Button>
-          <Button
-            startIcon={<BusinessCenterOutlinedIcon />}
-            variant="contained"
-            disableElevation
-            size="small"
-            sx={
-              activeTab === "tab3"
-                ? {
-                    backgroundColor: "black",
-                    border: "1px solid black",
-                    borderRadius: "100px",
-                    margin: "10px 5px 10px 5px",
-                    fontWeight: 600,
-                    "&:hover": {
-                      backgroundColor: "white",
-                      color: "black",
-                    },
-                  }
-                : {
-                    backgroundColor: "white",
-                    border: "1px solid black",
-                    borderRadius: "100px",
-                    color: "black",
-                    margin: "10px 5px 10px 5px",
-                    fontWeight: 600,
-                    "&:hover": {
-                      backgroundColor: "black",
-                      color: "white",
-                    },
-                  }
-            }
-            onClick={handleTab3}
-          >
-            Business
+            Security and Data
           </Button>
         </Stack>
       </CardActions>
@@ -208,39 +173,45 @@ function Tab1(){
             fontWeight: 500,
           }}
         >
-          Informatics Courses
+          MSIS Core Courses
         </Typography>
         <div className="redLine" />
         <Typography gutterBottom variant="body1">
-          Informatics is a multidisciplinary field that connects technology with
-          other fields like business. Here's a sample of some of the content I
-          learned:
+          My graduate program was split into two parts: a core and a
+          specialization. <b>Core</b> involved drinking from a fire hose of
+          information in all areas relating to information systems, including:
         </Typography>
         <Stack direction="row" flexWrap="wrap">
-          <ColoredChip icon={<CodeIcon />} title="Intro to Informatics" />
           <ColoredChip
             icon={<PeopleAltOutlinedIcon />}
-            title="Social Informatics"
+            title="Agile and Processes"
           />
+          <ColoredChip icon={<CodeIcon />} title="Cloud Computing" />
+          <ColoredChip icon={<CodeIcon />} title="Data Analytics" />
+          <ColoredChip icon={<CodeIcon />} title="Data and Systems" />
+          <ColoredChip
+            icon={<EmojiObjectsOutlinedIcon />}
+            title="Design Thinking"
+          />
+          <ColoredChip icon={<CodeIcon />} title="ERP and Automation" />
+          <ColoredChip icon={<CodeIcon />} title="IT Architecture" />
+          <ColoredChip
+            icon={<EmojiObjectsOutlinedIcon />}
+            title="IT Governance and Risks"
+          />
+          <ColoredChip
+            icon={<EmojiObjectsOutlinedIcon />}
+            title="IT Project Management"
+          />
+          <ColoredChip icon={<PeopleAltOutlinedIcon />} title="IT Strategy" />
+          <ColoredChip
+            icon={<EmojiObjectsOutlinedIcon />}
+            title="Product Management"
+          />
+          <ColoredChip icon={<CodeIcon />} title="Emerging Technologies" />
           <ColoredChip
             icon={<PeopleAltOutlinedIcon />}
-            title="Interface and Design"
-          />
-          <ColoredChip icon={<CodeIcon />} title="Database Design" />
-          <ColoredChip icon={<CodeIcon />} title="Web Design" />
-          <ColoredChip icon={<CodeIcon />} title="Cloud Project Management" />
-          <ColoredChip
-            icon={<EmojiObjectsOutlinedIcon />}
-            title="Computing and Environment"
-          />
-          <ColoredChip
-            icon={<EmojiObjectsOutlinedIcon />}
-            title="Computer Ethics"
-          />
-          <ColoredChip icon={<CodeIcon />} title="Info. System Development I" />
-          <ColoredChip
-            icon={<CodeIcon />}
-            title="Info. System Development II"
+            title="Collaboration and Ethics"
           />
         </Stack>
       </Box>
@@ -258,76 +229,36 @@ function Tab2() {
           fontWeight: 500,
         }}
       >
-        Computer Science Courses
+        Specialization Courses
       </Typography>
       <div className="redLine" />
       <Typography gutterBottom variant="body1">
-        My minor in Computer Science along with my own interest in coding
-        drastically helped augment my skills as a developer. Here are some
-        sample topics:
+        My specializations within the program were in{" "}
+        <i>Enterprise Risk and Security Management</i> and <i>Data Analytics</i>
+        . Here are some of the courses I took for them:
       </Typography>
       <Stack direction="row" flexWrap="wrap">
-        <ColoredChip icon={<CodeIcon />} title="Intro to C.S." />
-        <ColoredChip icon={<CodeIcon />} title="Software Systems" />
+        <ColoredChip icon={<CodeIcon />} title="Advanced IT Security" />
         <ColoredChip
-          icon={<DataArrayOutlinedIcon />}
-          title="Discrete Structures"
+          icon={<EmojiObjectsOutlinedIcon />}
+          title="Cybersecurity Law"
         />
-        <ColoredChip icon={<DataArrayOutlinedIcon />} title="Data Structures" />
-        <ColoredChip icon={<CodeIcon />} title="Mobile App Development" />
+        <ColoredChip icon={<DataArrayOutlinedIcon />} title="Data Analytics" />
+        <ColoredChip icon={<CodeIcon />} title="Predictive Analytics" />
         <ColoredChip
-          icon={<DataArrayOutlinedIcon />}
-          title="Distributed Systems"
+          icon={<EmojiObjectsOutlinedIcon />}
+          title="Organizational Security"
+        />
+        <ColoredChip
+          icon={<EmojiObjectsOutlinedIcon />}
+          title="Deloitte Capstone Experience"
         />
       </Stack>
     </Box>
   );
 }
 
-function Tab3(){
-    return (
-      <Box>
-        <Typography
-          gutterBottom
-          variant="h4"
-          component="div"
-          sx={{
-            fontWeight: 500,
-          }}
-        >
-          Business Courses
-        </Typography>
-        <div className="redLine" />
-        <Typography gutterBottom variant="body1">
-          Business was an area I always wanted to explore and connect technology to. As such, I took the following classes to further my knowledge in the area:
-        </Typography>
-        <Stack direction="row" flexWrap="wrap">
-          <ColoredChip icon={<CodeIcon />} title="Computers in Business" />
-          <ColoredChip
-            icon={<AttachMoneyOutlinedIcon />}
-            title="Business Accounting"
-          />
-          <ColoredChip
-            icon={<EmojiObjectsOutlinedIcon />}
-            title="Business Law"
-          />
-          <ColoredChip
-            icon={<AttachMoneyOutlinedIcon />}
-            title="Financial Management"
-          />
-          <ColoredChip icon={<PeopleAltOutlinedIcon />} title="Marketing" />
-          <ColoredChip
-            icon={<EmojiObjectsOutlinedIcon />}
-            title="Operations Management"
-          />
-          <ColoredChip
-            icon={<PeopleAltOutlinedIcon />}
-            title="Leadership and Management"
-          />
-        </Stack>
-      </Box>
-    );
-}
+
 
 function ColoredChip(props) {
   return (

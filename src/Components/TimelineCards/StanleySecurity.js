@@ -15,26 +15,22 @@ import CodeIcon from "@mui/icons-material/Code";
 import ColoredChip from "../ColoredChip";
 import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
 import HomeButton from "../HomeButton";
+import BlackOutlineChip from "./BlackOutlineChip";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import CloudDoneOutlinedIcon from "@mui/icons-material/CloudDoneOutlined";
+import DataArrayOutlinedIcon from "@mui/icons-material/DataArrayOutlined";
+import InsertEmoticonOutlinedIcon from "@mui/icons-material/InsertEmoticonOutlined";
 
 
 export default function StanleySecurity() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: "white",
-        color: "black",
-        borderTop: "1px solid lightgrey",
-        borderRight: "1px solid lightGrey",
-        borderLeft: "1px solid lightGrey",
-        borderBottom: "1px solid lightGrey",
+        border: "1px solid lightGray",
         borderRadius: "15px",
         boxShadow: "none",
+        paddingBottom: "0px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
@@ -62,33 +58,54 @@ export default function StanleySecurity() {
             alignItems="left"
             spacing={0}
           >
+            <Typography variant="caption">STANLEY Security</Typography>
             <Typography
               variant="h4"
               sx={{
                 fontWeight: "bold",
               }}
             >
-              STANLEY Security | Project Management
+              Project Manager
             </Typography>
-            <Typography variant="overline">Summer 2021 Internship</Typography>
+            <Typography variant="overline">
+              Summer 2021 Internship
+            </Typography>
             <div className="redLine"></div>
+            <Stack
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              spacing={1}
+              sx={{ flexWrap: "wrap" }}
+            >
+              <BlackOutlineChip
+                icon={<SettingsOutlinedIcon />}
+                title="Management"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<CloudDoneOutlinedIcon />}
+                title="Cloud Technologies"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<DataArrayOutlinedIcon />}
+                title="Data Design"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<InsertEmoticonOutlinedIcon />}
+                title="Marketing"
+                color="black"
+                background="#ffcaca"
+              />
+            </Stack>
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            <ColoredChip
-              icon={<CodeIcon />}
-              title="Web Development"
-              color="black"
-              background="#ffcaca"
-            />
-          </Stack>
           <Typography variant="body1">
             This internship was a fantastic opportunity to really learn what it
             is like to contribute to a corporation on large-scale projects.

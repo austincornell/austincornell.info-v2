@@ -14,6 +14,9 @@ import Stack from "@mui/material/Stack";
 import CodeIcon from "@mui/icons-material/Code";
 import ColoredChip from "../ColoredChip";
 import WebIcon from "@mui/icons-material/Web";
+import BlackOutlineChip from "./BlackOutlineChip";
+import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
+import CloudDoneOutlinedIcon from "@mui/icons-material/CloudDoneOutlined";
 
 function ThisWebsite() {
   const [expanded, setExpanded] = React.useState(false);
@@ -25,14 +28,10 @@ function ThisWebsite() {
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: "white",
-        color: "black",
-        borderTop: "1px solid lightgrey",
-        borderRight: "1px solid lightGrey",
-        borderLeft: "1px solid lightGrey",
-        borderBottom: "1px solid lightGrey",
+        border: "1px solid lightGray",
         borderRadius: "15px",
         boxShadow: "none",
+        paddingBottom: "0px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{ background: "var(--mainRed)", color: "#fff" }}
@@ -73,23 +72,35 @@ function ThisWebsite() {
                 marginBottom: "10px",
               }}
             ></div>
+            <Stack
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              spacing={1}
+              flexWrap="wrap"
+            >
+              <BlackOutlineChip
+                icon={<CodeIcon />}
+                title="Web Development"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<DesignServicesOutlinedIcon />}
+                title="Design Skills"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<CloudDoneOutlinedIcon />}
+                title="Cloud Technologies"
+                color="black"
+                background="#ffcaca"
+              />
+            </Stack>
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            <ColoredChip
-              icon={<CodeIcon />}
-              title="Web Development"
-              color="black"
-              background="#ffcaca"
-            />
-          </Stack>
           <Typography
             variant="body1"
             sx={{

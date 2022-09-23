@@ -64,6 +64,14 @@ a svg:hover{
   margin-bottom: 10px;
 }
 
+.blackLine {
+  background-color: black;
+  width: 70px;
+  height: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .spacerDiv{
   margin-top: 40vh;
 }

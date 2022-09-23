@@ -15,26 +15,19 @@ import CodeIcon from "@mui/icons-material/Code";
 import ColoredChip from "../ColoredChip";
 import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
 import HomeButton from "../HomeButton";
-
+import BlackOutlineChip from "./BlackOutlineChip";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 
 export default function BestBuy() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: "white",
-        color: "black",
-        borderTop: "1px solid lightgrey",
-        borderRight: "1px solid lightGrey",
-        borderLeft: "1px solid lightGrey",
-        borderBottom: "1px solid lightGrey",
+        border: "1px solid lightGray",
         borderRadius: "15px",
         boxShadow: "none",
+        paddingBottom: "0px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
@@ -62,35 +55,42 @@ export default function BestBuy() {
             alignItems="left"
             spacing={0}
           >
+            <Typography variant="caption">Best Buy Inc.</Typography>
             <Typography
               variant="h4"
               sx={{
                 fontWeight: "bold",
               }}
             >
-              Best Buy Associate
+              Sales Associate
             </Typography>
             <Typography variant="overline">
               Summer 2017 - Summer 2019
             </Typography>
             <div className="redLine"></div>
+            <Stack
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              spacing={1}
+              sx={{ flexWrap: "wrap" }}
+            >
+              <BlackOutlineChip
+                icon={<ChatOutlinedIcon />}
+                title="Communication"
+                color="black"
+                background="#ffcaca"
+              />
+              <BlackOutlineChip
+                icon={<LibraryBooksOutlinedIcon />}
+                title="Technical Knowledge"
+                color="black"
+                background="#ffcaca"
+              />
+            </Stack>
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            <ColoredChip
-              icon={<CodeIcon />}
-              title="Web Development"
-              color="black"
-              background="#ffcaca"
-            />
-          </Stack>
           <Typography variant="body1">
             My time at <b>Best Buy</b> was on of my largest growth moments at it
             was my first real position I had spent a long period in. During my

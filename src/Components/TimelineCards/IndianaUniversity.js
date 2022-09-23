@@ -12,10 +12,13 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Stack from "@mui/material/Stack";
 import CodeIcon from "@mui/icons-material/Code";
-import ColoredChip from "../ColoredChip";
+import Chip from "@mui/material/Chip";
 import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
 import TimelineButton from "./TimelineButton";
-
+import BlackOutlineChip from "./BlackOutlineChip";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
 export default function IndianaUniversity() {
   const [expanded, setExpanded] = React.useState(false);
@@ -27,14 +30,10 @@ export default function IndianaUniversity() {
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: "white",
-        color: "black",
-        borderTop: "1px solid lightgrey",
-        borderRight: "1px solid lightGrey",
-        borderLeft: "1px solid lightGrey",
-        borderBottom: "1px solid lightGrey",
+        border: "1px solid lightGray",
         borderRadius: "15px",
         boxShadow: "none",
+        paddingBottom: "0px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
@@ -63,42 +62,41 @@ export default function IndianaUniversity() {
             alignItems="left"
             spacing={0}
           >
+            <Typography variant="caption">Indiana University</Typography>
             <Typography
               variant="h4"
               sx={{
                 fontWeight: "bold",
               }}
             >
-              Indiana University | Instructor & Ambassador
+              Instructor & Ambassador
             </Typography>
             <Typography variant="overline">
               Spring 2019 - Summer 2022
             </Typography>
             <div className="redLine"></div>
-           
             <Stack
               direction="row"
               justifyContent="flex-start"
               alignItems="center"
               spacing={1}
-
-              sx={{flexWrap: "wrap"}}
+              sx={{ flexWrap: "wrap" }}
             >
-              <ColoredChip
-                icon={<CodeIcon />}
-                title="Web Development"
+              <BlackOutlineChip
+                icon={<PeopleAltOutlinedIcon />}
+                title="Leadership"
                 color="black"
                 background="#ffcaca"
               />
-              <ColoredChip
-                icon={<CodeIcon />}
-                title="Web Development"
+              <BlackOutlineChip
+                icon={<LightbulbOutlinedIcon />}
+                title="Teaching/Instruction"
                 color="black"
                 background="#ffcaca"
               />
-              <ColoredChip
-                icon={<CodeIcon />}
-                title="Web Development"
+              <BlackOutlineChip
+                icon={<SettingsOutlinedIcon />}
+                title="Management"
                 color="black"
                 background="#ffcaca"
               />
@@ -106,7 +104,6 @@ export default function IndianaUniversity() {
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          
           <Typography variant="body1">
             Choosing to become an Assistant Instructor at Indiana University was
             one of the best decisions I have made, which explains why I was
@@ -150,4 +147,6 @@ export default function IndianaUniversity() {
     </VerticalTimelineElement>
   );
 }
+
+
 
