@@ -32,14 +32,16 @@ a svg:hover{
   fill: var(--mainRed);
 }
 
-.redButton{
-  background-color: var(--mainRed);
-}
-
 .homeImage {
   width: 300px;
   border-radius: 200px;
+  
 }
+
+.aboutImage{
+  border-radius: 15px;
+}
+
 .homeImageMobile {
   max-width: 92vw;
   border-radius: 15px;
@@ -76,39 +78,6 @@ a svg:hover{
   margin-top: 40vh;
 }
 
-.active{
-  background-color: red;
-}
-
-
-.homeResumeButton{
-  background-color: black;
-  align-items: center;
-  margin: 20px 5px 20px 5px;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-
-}
 
 
 
