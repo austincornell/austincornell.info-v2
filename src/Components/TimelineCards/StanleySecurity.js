@@ -4,17 +4,13 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Stack from "@mui/material/Stack";
-import CodeIcon from "@mui/icons-material/Code";
-import ColoredChip from "../ColoredChip";
-import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
-import HomeButton from "../HomeButton";
+import LockIcon from "@mui/icons-material/Lock";
 import BlackOutlineChip from "./BlackOutlineChip";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import CloudDoneOutlinedIcon from "@mui/icons-material/CloudDoneOutlined";
@@ -34,10 +30,10 @@ export default function StanleySecurity() {
       }}
       contentArrowStyle={{ borderRight: "7px solid  black" }}
       iconStyle={{
-        background: "#f0c628",
+        background: "var(--mainRed)",
         color: "#fff",
       }}
-      icon={<HandymanOutlinedIcon />}
+      icon={<LockIcon />}
     >
       <Accordion
         sx={{
@@ -67,9 +63,7 @@ export default function StanleySecurity() {
             >
               Project Manager
             </Typography>
-            <Typography variant="overline">
-              Summer 2021 Internship
-            </Typography>
+            <Typography variant="overline">Summer 2021 Internship</Typography>
             <div className="redLine"></div>
             <Stack
               direction="row"

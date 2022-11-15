@@ -4,21 +4,18 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Stack from "@mui/material/Stack";
-import CodeIcon from "@mui/icons-material/Code";
-import Chip from "@mui/material/Chip";
 import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlined";
-import TimelineButton from "./TimelineButton";
 import BlackOutlineChip from "./BlackOutlineChip";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import CoPresentIcon from '@mui/icons-material/CoPresent';
 
 export default function IndianaUniversity() {
   const [expanded, setExpanded] = React.useState(false);
@@ -40,7 +37,7 @@ export default function IndianaUniversity() {
         background: "var(--mainRed)",
         color: "#fff",
       }}
-      icon={<DesignServicesOutlinedIcon />}
+      icon={<CoPresentIcon />}
     >
       <Accordion
         sx={{

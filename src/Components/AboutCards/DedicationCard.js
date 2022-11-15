@@ -34,7 +34,7 @@ export default function DedicationCard() {
             fontWeight: "normal",
           }}
         >
-          My Philosophy
+          Inspire more
         </Typography>
         <Typography
           gutterBottom
@@ -62,9 +62,9 @@ export default function DedicationCard() {
       <hr className="cardLine" />
       <CardActions>
         <HomeButton
-          text="More About Me"
+          text="More About Dedication"
           icon={<InfoOutlinedIcon />}
-          destination="/about"
+          destination="https://outlook.monmouth.edu/2017/03/effects-of-dedication-in-the-workplace/"
         />
       </CardActions>
     </Card>

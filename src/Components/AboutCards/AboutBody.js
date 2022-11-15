@@ -25,8 +25,8 @@ export default function AboutBody() {
         spacing={2}
         sx={{
           marginTop: "7vh",
-          marginBottom: "2vh",
         }}
+        wrap="wrap-reverse"
       >
         <Grid item xs={12} md={6} data-aos="fade-up" data-aos-delay="200">
           <AboutIntro />
@@ -50,19 +50,28 @@ export default function AboutBody() {
             className="aboutImage"
           />
         </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          marginTop: "2vh",
+          marginBottom: "2vh",
+        }}
+      >
         <Grid item xs={12} data-aos="fade-up" data-aos-delay="200">
           <PhilIntro />
         </Grid>
-        <Grid item md={12} lg={4}>
+        <Grid item md={12} lg={4} data-aos="fade-up" data-aos-delay="200">
           <HumanityCard />
         </Grid>
-        <Grid item md={12} lg={4}>
+        <Grid item md={12} lg={4} data-aos="fade-up" data-aos-delay="200">
           <CommunicationCard />
         </Grid>
-        <Grid item md={12} lg={4}>
+        <Grid item md={12} lg={4} data-aos="fade-up" data-aos-delay="200">
           <DedicationCard />
         </Grid>
-        <Grid item sx={12} >
+        <Grid item sx={12} data-aos="fade-up" data-aos-delay="200">
           <PersonalLifeCard />
         </Grid>
       </Grid>

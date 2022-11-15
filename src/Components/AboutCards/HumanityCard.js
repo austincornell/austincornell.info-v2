@@ -34,7 +34,7 @@ export default function HumanityCard() {
             fontWeight: "normal",
           }}
         >
-          My Philosophy
+          Remember the
         </Typography>
         <Typography
           gutterBottom
@@ -63,9 +63,9 @@ export default function HumanityCard() {
       <hr className="cardLine" />
       <CardActions>
         <HomeButton
-          text="More About Me"
+          text="More About Humanity"
           icon={<InfoOutlinedIcon />}
-          destination="/about"
+          destination="https://www.huffpost.com/entry/the-value-of-humanity-in-the-workplace_b_9821828"
         />
       </CardActions>
     </Card>

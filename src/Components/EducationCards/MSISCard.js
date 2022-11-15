@@ -100,7 +100,7 @@ export default function MSISCard() {
                     margin: "10px 5px 10px 5px",
                     fontWeight: 600,
                     "&:hover": {
-                      backgroundColor: "white",
+                      backgroundColor: "lightgrey",
                       color: "black",
                     },
                   }
@@ -112,8 +112,8 @@ export default function MSISCard() {
                     margin: "10px 5px 10px 5px",
                     fontWeight: 600,
                     "&:hover": {
-                      backgroundColor: "black",
-                      color: "white",
+                      backgroundColor: "lightgrey",
+                      color: "black",
                     },
                   }
             }
@@ -135,7 +135,7 @@ export default function MSISCard() {
                     margin: "10px 5px 10px 5px",
                     fontWeight: 600,
                     "&:hover": {
-                      backgroundColor: "white",
+                      backgroundColor: "lightgrey",
                       color: "black",
                     },
                   }
@@ -147,8 +147,8 @@ export default function MSISCard() {
                     margin: "10px 5px 10px 5px",
                     fontWeight: 600,
                     "&:hover": {
-                      backgroundColor: "black",
-                      color: "white",
+                      backgroundColor: "lightgrey",
+                      color: "black",
                     },
                   }
             }

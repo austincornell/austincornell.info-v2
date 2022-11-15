@@ -34,7 +34,7 @@ export default function CommunicationCard() {
             fontWeight: "normal",
           }}
         >
-          My Philosophy
+          Focus on
         </Typography>
         <Typography
           gutterBottom
@@ -62,9 +62,9 @@ export default function CommunicationCard() {
       <hr className="cardLine" />
       <CardActions>
         <HomeButton
-          text="More About Me"
+          text="More About Communication"
           icon={<InfoOutlinedIcon />}
-          destination="/about"
+          destination="https://asana.com/resources/effective-communication-workplace"
         />
       </CardActions>
     </Card>
